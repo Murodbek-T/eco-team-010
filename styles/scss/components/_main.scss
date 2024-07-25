@@ -1,0 +1,45 @@
+@use "../abstract/variables" as var;
+@use "../abstract/mixins";
+
+.main_content {
+  margin-top: 20px;
+  &_navigator {
+    @include mixins.display(flex-start, center);
+    gap: 10px;
+    font-weight: 600;
+  }
+
+  .gray-text {
+    color: var.$grayer;
+  }
+
+  &_text {
+    text-align: center;
+    margin-top: 50px;
+
+    h2 {
+      color: var.$green;
+      line-height: 44px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      max-width: 615px;
+      width: 100%;
+      margin: 0 auto;
+      line-height: 56px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-weight: 500;
+      max-width: 615px;
+      width: 100%;
+      margin: 0 auto;
+      line-height: 24px;
+      margin-bottom: 56px;
+    }
+  }
+}

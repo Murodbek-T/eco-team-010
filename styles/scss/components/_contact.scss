@@ -1,0 +1,58 @@
+@use "../abstract/variables" as var;
+@use "../abstract/mixins";
+
+.contact {
+  @media (max-width: 768px) {
+    p,
+    a {
+      font-size: 5px;
+      text-wrap: balance;
+    }
+
+    &_items {
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    p,
+    a {
+      font-size: 12px;
+    }
+
+    &_items {
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 428px) {
+    p {
+      display: none;
+    }
+  }
+
+  p {
+    color: var.$white;
+  }
+  background-color: var.$purple;
+  padding: 16px 0;
+  font-size: 14px;
+  &_items {
+    @include mixins.display(space-between, center);
+    gap: 16px;
+
+    &-left {
+      @include mixins.display(space-between, center);
+      gap: 10px;
+      color: var.$white;
+    }
+
+    &-right {
+      @include mixins.display(space-between, center);
+      gap: 16px;
+      a {
+        color: var.$white;
+      }
+    }
+  }
+}

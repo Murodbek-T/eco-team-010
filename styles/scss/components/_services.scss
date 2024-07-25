@@ -1,0 +1,167 @@
+@use "../abstract/variables" as var;
+@use "../abstract/mixins";
+
+.services_content {
+  background-color: var.$bcg;
+  padding: 20px;
+  border-radius: 24px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1024px) {
+    .navigation {
+      ul {
+        @include mixins.display(space-between, center);
+        gap: 16px !important;
+
+        li {
+          font-size: 14px;
+          text-wrap: nowrap;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navigation {
+      ul {
+        @include mixins.display(space-between, center);
+        gap: 16px !important;
+
+        li {
+          font-size: 14px;
+          text-wrap: nowrap;
+        }
+      }
+    }
+  }
+  .navigation {
+    @include mixins.display(space-around, center);
+
+    ul {
+      @include mixins.display(space-between, center);
+      gap: 44px;
+      li {
+        color: #808080;
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: 428px) {
+      ul {
+        padding-left: 18px;
+        @include mixins.display(center, center);
+        width: 100%;
+        flex-direction: column;
+        li {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .search {
+      width: 263px;
+      height: 56px;
+      padding-left: 48px;
+      border-radius: 16px;
+      border: 1px solid #e3e2e2;
+      font-size: 16px;
+      color: var.$purple;
+      background-image: url("../../src/icons/search-normal.svg");
+      background-repeat: no-repeat;
+      background-position: 10px center;
+
+      @media (max-width: 1180px) {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
+        width: 160px;
+        height: 50px;
+        background-size: 18px;
+      }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .search_wrapper {
+      border-left: 1px solid black;
+      padding-left: 20px;
+
+      @media (max-width: 768px) {
+        border: none;
+      }
+    }
+  }
+}
+
+.services_content_cards {
+  @include mixins.display(space-between, center);
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @media (max-width: 1024px) {
+    @include mixins.display(space-evenly, center);
+  }
+
+  .card {
+    @include mixins.display(center, flex-start);
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    background-color: var.$bcg;
+    width: 305px;
+    height: 442px;
+    border-radius: 32px;
+
+    .type {
+      background-color: var.$green;
+      padding: 2px 12px;
+      border-radius: 8px;
+      color: var.$white;
+    }
+
+    &_text {
+      h2 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        line-height: 22px;
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.services {
+  .envelope {
+    position: relative;
+    left: 95%;
+
+    @media (max-width: 428px) {
+      left: 85%;
+    }
+
+    @include mixins.display(center, center);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var.$green;
+    margin: {
+      top: 20px;
+      bottom: 50px;
+    }
+    box-shadow: 0px 16px 32px 0px #0fc36d66;
+    cursor: pointer;
+  }
+}

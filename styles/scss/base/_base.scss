@@ -1,0 +1,84 @@
+@use "../abstract/variables" as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: var.$green;
+  color: var.$white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.btn_outline {
+  background-color: transparent;
+  border: 1px solid var.$green;
+  color: var.$green;
+  transition: 0.3s;
+}
+
+.btn_outline:hover {
+  background-color: var.$green;
+  color: var.$white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  transition: transform 0.2s;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.str {
+  font-weight: 600;
+  color: var.$purple;
+}
+
+p {
+  color: var.$prg;
+}
+
+.active {
+  background-color: var.$green;
+  color: var.$white !important;
+  padding: 12px 10px;
+  border-radius: 16px;
+}
